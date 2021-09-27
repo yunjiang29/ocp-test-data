@@ -1,0 +1,26 @@
+{
+    "architectures": {
+        "x86_64": {
+            "images": {
+                "aws": {
+                    "regions": {
+                        "4.9":{
+                            "us-gov-west-1": {
+                                "image": "ami-09a4996cd72bf976e"
+                            },
+                            "us-gov-east-1": {
+                                "image": "ami-062728cb997a0a2cb"
+                            },
+                            "cn-north-1": {
+                                "image": "ami-0965462adbf583cbc"
+                            },
+                            "cn-northwest-1": {
+                                "image": "ami-035817c6481d7092c"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

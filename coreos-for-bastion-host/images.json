@@ -1,0 +1,204 @@
+{
+    "architectures": {
+        "aarch64": {
+            "images": {
+                "aws": {
+                    "regions": {
+                        "af-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0bde2bde601a1d640"
+                        },
+                        "ap-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-05d93271c94d74feb"
+                        },
+                        "ap-northeast-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0391339ec29cb3e42"
+                        },
+                        "ap-northeast-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-00f197de801ab41ba"
+                        },
+                        "ap-northeast-3": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-08769df4bb2eba99e"
+                        },
+                        "ap-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-003caaaef262fb5b4"
+                        },
+                        "ap-southeast-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0089fcac7a6ce9c82"
+                        },
+                        "ap-southeast-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-07978e1a2f0280714"
+                        },
+                        "ca-central-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0b9c2d5294b889d44"
+                        },
+                        "eu-central-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-032f6f6d340911309"
+                        },
+                        "eu-north-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-065df82b2b5d40103"
+                        },
+                        "eu-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0f032302d14c66b72"
+                        },
+                        "eu-west-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0211ffe4a0a5a352c"
+                        },
+                        "eu-west-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-06de3c6b106427133"
+                        },
+                        "eu-west-3": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0160b50c808c22698"
+                        },
+                        "me-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0c83614fb7d6da392"
+                        },
+                        "sa-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-015255dad1c628b54"
+                        },
+                        "us-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0df737d22f586800c"
+                        },
+                        "us-east-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-07d9abc83405ce5b1"
+                        },
+                        "us-west-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-02de2cc30fc97785f"
+                        },
+                        "us-west-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-02760313f49df3a92"
+                        }
+                    }
+                }
+            }
+        },
+        "x86_64": {
+            "images": {
+                "aws": {
+                    "regions": {
+                        "af-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0488288ef40242f4f"
+                        },
+                        "ap-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-073dc97b1970a203a"
+                        },
+                        "ap-northeast-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0151aec678c93e680"
+                        },
+                        "ap-northeast-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0851775fb4dff19af"
+                        },
+                        "ap-northeast-3": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-067daa6f839d6f982"
+                        },
+                        "ap-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-05a81df62665aeff4"
+                        },
+                        "ap-southeast-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-05bcaed4343b6f31a"
+                        },
+                        "ap-southeast-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-02b32d52b9288e255"
+                        },
+                        "ca-central-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0df350f1651cd544b"
+                        },
+                        "eu-central-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0608f6ebe8f1d7bfa"
+                        },
+                        "eu-north-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-037e60a41946a97cc"
+                        },
+                        "eu-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-07636b38676bea5aa"
+                        },
+                        "eu-west-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-024b4d04fcd7bc451"
+                        },
+                        "eu-west-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-07f187c879dcd24cd"
+                        },
+                        "eu-west-3": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0c18396959d497787"
+                        },
+                        "me-south-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0fd9425d966eea869"
+                        },
+                        "sa-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0a1380cff6141d66f"
+                        },
+                        "us-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-00469a94375c094bb"
+                        },
+                        "us-east-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0663f60fae16c2567"
+                        },
+                        "us-west-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0083451ac2358a03c"
+                        },
+                        "us-west-2": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0f8b956470d0f9de4"
+                        },
+                        "us-gov-west-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-00c6b3c983ac5c3b5"
+                        },
+                        "us-gov-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-09ec50d63efbaedc6"
+                        },
+                        "cn-north-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-00d5cb9dd5f5296d8"
+                        },
+                        "cn-northwest-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0f56d4ff416241b3d"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
