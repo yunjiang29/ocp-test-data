@@ -458,6 +458,22 @@
                         "us-west-2": {
                             "release": "34.20210821.3.0",
                             "image": "ami-0f8b956470d0f9de4"
+                        },
+                        "us-gov-west-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-00c6b3c983ac5c3b5"
+                        },
+                        "us-gov-east-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-09ec50d63efbaedc6"
+                        },
+                        "cn-north-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-00d5cb9dd5f5296d8"
+                        },
+                        "cn-northwest-1": {
+                            "release": "34.20210821.3.0",
+                            "image": "ami-0f56d4ff416241b3d"
                         }
                     }
                 },
