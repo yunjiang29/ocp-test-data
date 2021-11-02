@@ -5,23 +5,67 @@
                 "aws": {
                     "regions": {
                         "us-gov-west-1": {
+                            "4.6": {
+                                "release": "46.82.202109242004-0",
+                                "image": "ami-0971cc33ca4b0e452"
+                            },
+                            "4.7": {
+                                "release": "47.84.202109241831-0",
+                                "image": "ami-07f4f55ebd81a13a7"
+                            },
+                            "4.8": {
+                                "release": "48.84.202109241901-0",
+                                "image": "ami-06cfa63a067ea3c6c"
+                            },
                             "4.9": {
-                                "image": "ami-09a4996cd72bf976e"
+                                "release": "49.84.202110081407-0",
+                                "image": "ami-0effc2fcb0eeaeb62"
+                            },
+                            "4.10": {
+                                "release": "410.84.202110140201-0",
+                                "image": "ami-0f9ad977b2bf18b6d"
                             }
                         },
                         "us-gov-east-1": {
+                            "4.6": {
+                                "release": "46.82.202109242004-0",
+                                "image": "ami-0668414dd4113559a"
+                            },
+                            "4.7": {
+                                "release": "47.84.202109241831-0",
+                                "image": "ami-0e9df2f817ee0a092"
+                            },
+                            "4.8": {
+                                "release": "48.84.202109241901-0",
+                                "image": "ami-02562983d62945e82"
+                            },
                             "4.9": {
-                                "image": "ami-062728cb997a0a2cb"
+                                "release": "49.84.202110081407-0",
+                                "image": "ami-0093143713a4adcd6"
+                            },
+                            "4.10": {
+                                "release": "410.84.202110140201-0",
+                                "image": "ami-0831265d125ef3ffe"
                             }
                         },
                         "cn-north-1": {
                             "4.9": {
-                                "image": "ami-0965462adbf583cbc"
+                                "release": "49.84.202110081407-0",
+                                "image": "ami-05de2e224b2e41457"
+                            },
+                            "4.10": {
+                                "release": "410.84.202110140201-0",
+                                "image": "ami-0d03301175e0d9e37"
                             }
                         },
                         "cn-northwest-1": {
                             "4.9": {
-                                "image": "ami-035817c6481d7092c"
+                                "release": "49.84.202110081407-0",
+                                "image": "ami-0f54868be76fc89b5"
+                            },
+                            "4.10": {
+                                "release": "410.84.202110140201-0",
+                                "image": "ami-0c02e4ffbb3998073"
                             }
                         }
                     }
