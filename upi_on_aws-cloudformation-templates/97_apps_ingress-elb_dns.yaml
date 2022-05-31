@@ -1,0 +1,80 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Template for OpenShift Cluster Network Elements (Route53 & LBs)
+
+Parameters:
+  PublicHostedZoneId:
+    Description: The Route53 public zone ID to register the targets with, such as Z21IXYZABCZ2A4.
+    Default: ""
+    Type: String
+  PrivateHostedZoneId:
+    Description: The Route53 private zone ID to register the targets with, such as Z21IXYZABCZ2A4.
+    Type: String
+  PrivateHostedZoneName:
+    Description: The Route53 zone to register the targets with, such as cluster.example.com. Omit the trailing period.
+    Type: String
+  RouterLbDns:
+    Description: The loadbalancer DNS
+    Type: String
+  RouterLbHostedZoneId:
+    Description: The Route53 zone ID where loadbalancer reside
+    Default: ""
+    Type: String
+  RegisterPublicAppsDNS:
+    Default: "yes"
+    AllowedValues:
+    - "yes"
+    - "no"
+    Type: String
+
+
+Conditions:
+  IsGovCloud: !Equals ['aws-us-gov', !Ref "AWS::Partition"]
+  DoRegistration: !Equals ["yes", !Ref RegisterPublicAppsDNS]
+
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterLabels:
+      PublicHostedZoneId:
+        default: "Public Hosted Zone ID"
+      PrivateHostedZoneId:
+        default: "Private Hosted Zone ID"
+      PrivateHostedZoneName:
+        default: "Private Hosted Zone Name"
+      RouterLbDns:
+        default: "router loadbalancer dns"
+      RouterLbHostedZoneId:
+        default: "Private Hosted Zone ID of router lb"
+
+
+Resources:
+  ExternalAppsRecord:
+    Condition: DoRegistration
+    Type: AWS::Route53::RecordSet
+    Properties:
+      AliasTarget:
+        DNSName: !Ref RouterLbDns
+        HostedZoneId: !Ref RouterLbHostedZoneId
+        EvaluateTargetHealth: false
+      HostedZoneId: !Ref PublicHostedZoneId
+      Name: !Join [".", ["*.apps", !Ref PrivateHostedZoneName]]
+      Type: A
+
+  InternalAppsRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      !If
+        - "IsGovCloud"
+        - HostedZoneId: !Ref PrivateHostedZoneId
+          Name: !Join [".", ["*.apps", !Ref PrivateHostedZoneName]]
+          Type: CNAME
+          TTL: 10
+          ResourceRecords:
+          - !Ref RouterLbDns
+        - HostedZoneId: !Ref PrivateHostedZoneId
+          Name: !Join [".", ["*.apps", !Ref PrivateHostedZoneName]]
+          AliasTarget:
+            DNSName: !Ref RouterLbDns
+            HostedZoneId: !Ref RouterLbHostedZoneId
+            EvaluateTargetHealth: false
+          Type: A
