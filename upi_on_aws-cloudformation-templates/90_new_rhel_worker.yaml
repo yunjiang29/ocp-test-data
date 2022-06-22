@@ -1,0 +1,93 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Template for Openshift Cluster UPI RHEL Node Launch - Used for QE's BYOR automation testing
+
+Parameters:
+  InfrastructureName:
+    AllowedPattern: ^([a-zA-Z][a-zA-Z0-9\-]{0,26})$
+    MaxLength: 27
+    MinLength: 1
+    ConstraintDescription: InfrastructureName
+    Description: InfrastructureName
+    Type: String
+  WorkerSubnet:
+    Description: The subnets (recommend private) to launch the master nodes into
+    Type: AWS::EC2::Subnet::Id
+  WorkerSecurityGroupId:
+    Description: The master security group ID to associate with master nodes.
+    Type: AWS::EC2::SecurityGroup::Id
+  WorkerInstanceProfileName:
+    Description: IAM role to associate with nodes.
+    Type: String
+  WorkerInstanceType:
+    Default: m4.xlarge
+    Type: String
+  WorkerVolumeSize:
+    Default: 30
+    Type: String
+  RhelAmi:
+    Default: ami-02abd74486ad35bff
+    Type: String
+  InstanceNameSuffix:
+    Default: rhel
+    Type: String
+  SSHKeyName:
+    Type: String
+    Default: openshift-qe
+
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+    - Label:
+        default: "Host Information"
+      Parameters:
+      - WorkerInstanceType
+      - WorkerSecurityGroupId
+      - WorkerInstanceProfileName
+    - Label:
+        default: "Network Configuration"
+      Parameters:
+      - WorkerSubnet
+    ParameterLabels:
+      WorkerSubnet:
+        default: "Worker Subnet"
+      WorkerInstanceType:
+        default: "Worker Instance Type"
+      WorkerInstanceProfileName:
+        default: "Worker Instance Role Name"
+      WorkerSecurityGroupId:
+        default: "Worker Security Group ID"
+      WorkerVolumeSize:
+        default: "Worker volume size"
+      RHELVersion:
+        default: "RHEL version you want to install"
+
+Resources:
+  RHELworker0:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref RhelAmi
+      IamInstanceProfile: !Ref WorkerInstanceProfileName
+      InstanceType: !Ref WorkerInstanceType
+      NetworkInterfaces:
+      - AssociatePublicIpAddress: "false"
+        DeviceIndex: "0"
+        GroupSet:
+        - !Ref "WorkerSecurityGroupId"
+        SubnetId: !Ref "WorkerSubnet"
+      Tags:
+      - Key: !Join ["", ["kubernetes.io/cluster/", !Ref InfrastructureName]]
+        Value: "owned"
+      - Key: Name
+        Value: !Join ["", [!Ref InfrastructureName, "-", !Ref InstanceNameSuffix]]
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: !Ref "WorkerVolumeSize"
+            VolumeType: gp2
+      KeyName: !Ref SSHKeyName
+
+Outputs:
+  PrivateDnsName:
+    Description: The RHEL node private DNS, will be used to added into ansible inventory file
+    Value: !GetAtt RHELworker0.PrivateDnsName
